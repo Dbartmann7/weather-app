@@ -1,0 +1,20 @@
+.body{
+    background-color: rgb(67, 67, 67);
+    color:rgb(255, 255, 255);
+    margin:0;
+}
+.layoutHeader{
+    height: 15svh;
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.main{
+    margin:5px;
+    width: calc(100svw - 10px);
+    height:calc(85svh - 10px);
+}
