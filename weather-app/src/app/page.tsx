@@ -3,21 +3,22 @@
 import { useEffect, useState } from "react"
 
 
-
-
-const Home = async () => {
+const Home = () => {
     const [location, setLocation] = useState('') 
     const [weatherData, setWeatherData] = useState(null)
     const handleLocationChange = (newLocation:string) =>{
         setLocation(newLocation)
     }
     const getWeatherData = async(location:string) => {
-       
-        const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}}`)
-        setWeatherData(await res.json())
-        
-        
+        console.log(location)
+        await fetch('http://localhost:3000/weather_data', {
+        method:'post',
+        body:JSON.stringify(location)
+      })
+      const weatherData = await fetch('http://localhost:3000/weather_data')
+      return await weatherData.json()
     }
+
     return (
         <div>
             home
@@ -26,8 +27,8 @@ const Home = async () => {
                 value={location}
                 onChange={(e) => handleLocationChange(e.target.value)}
             />
-            <button onClick={() => getWeatherData(location)}>get data</button>
-            {weatherData ? weatherData.current.temp_c:null}
+            <button onClick={async () => {console.log(await getWeatherData(location))}}>get data</button>
+           
         </div>
     )
 }
