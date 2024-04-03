@@ -1,0 +1,8 @@
+.inputBtn{
+    width: 200px;
+    height: 100%;
+    background-color: hsl(229, 80%, 10%);
+    border:none;
+    color:hsl(228, 100%, 60%);
+    font-size: larger;
+}

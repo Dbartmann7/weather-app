@@ -1,0 +1,25 @@
+
+.body{
+    background-color: hsl(258, 80%, 20%);
+    color:rgb(255, 255, 255);
+    margin:0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.layoutHeader{
+    height: 15svh;
+    background-color: hsl(258, 80%, 6%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    margin:5px;
+    width: calc(100svw - 10px);
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
