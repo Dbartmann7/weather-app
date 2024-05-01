@@ -9,7 +9,7 @@ export async function POST(request:Request){
 
     const getWeatherData = async(location:string) => {
 
-        const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}&days=1&aqi=no&alerts=no}`)
+        const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${location}&days=1&aqi=no&alerts=no}`)
         return await res.json()
     }   
     weatherData.push(await getWeatherData(location))

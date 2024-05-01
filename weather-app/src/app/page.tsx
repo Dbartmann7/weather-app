@@ -10,10 +10,20 @@ const Home = () => {
     const {locationData, currentData, forecastData, setWeatherData} = useContext<WeatherDataContextValueType>(WeatherDataContext)
     const [showRed, setShowRed] = useState<boolean>(false)
     const [errorMsg, setErrorMsg] = useState<string>('')
-
+    const [path, setPath] = useState<string | undefined>('')
     const handleLocationChange = (newLocation:string) =>{
         setLocation(newLocation)
     }
+
+    useEffect(() => {
+        if(process.env.NODE_ENV === "development"){
+            setPath(process.env.NEXT_PUBLIC_DEVELOPMENT_PATH)
+        }else if(process.env.NODE_ENV === "production"){
+            setPath(process.env.NEXT_PUBLIC_PRODUCTION_PATH)
+        }else{
+            console.log('invalid node_env')
+        }
+    }, [])
     
     useEffect(() => {
         setShowRed(errorMsg.length > 0)
@@ -21,11 +31,11 @@ const Home = () => {
     const getWeatherData = async(location:string) => {
         if(location){
             setShowRed(false)
-            await fetch('http://localhost:3000/weather_data', {
+            await fetch(`${path}/weather_data`, {
                 method:'post',
                 body:JSON.stringify(location)
             })
-            const data = (await (await fetch('http://localhost:3000/weather_data')).json())[0]
+            const data = (await (await fetch(`${path}/weather_data`)).json())[0]
             if(!data.error){
                 setErrorMsg('')
                 if(setWeatherData) setWeatherData({current:data.current, location:data.location, forecast:data.forecast.forecastday[0]})
