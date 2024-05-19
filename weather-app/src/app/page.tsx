@@ -1,9 +1,12 @@
 'use client'
-import styles from '../styles/pages/app/page.module.css'
+import styles from '@/styles/pages/app/page.module.css'
 import { useContext, useEffect, useState } from "react"
-import InputBar from "@/components/app/InputBar/InputBar"
-import WeatherDisplay from '@/components/app/WeatherDisplay/WeatherDisplay'
+import InputBar from "@/components/InputBar/InputBar"
 import { WeatherDataContext, WeatherDataContextValueType} from '@/contexts/WeatherDataContext'
+import WeatherDisplayStyles from  '@/styles/components/weatherDisplay.module.css'
+import WeatherCurrentDisplay from '@/components/WeatherDisplay/WeatherCurrentDisplay/WeatherCurrentDisplay'
+import WeatherForcastDisplay from '@/components/WeatherDisplay/WeatherForcastDisplay/WeatherForcastDisplay'
+import ScrollStyles from "@/styles/scrollable.module.css"
 
 const Home = () => {
     const [location, setLocation] = useState('') 
@@ -60,8 +63,10 @@ const Home = () => {
                 errorMsg={errorMsg}
             />
 
-            <WeatherDisplay
-            />
+        <div className={`${WeatherDisplayStyles.weatherDisplayContainer} ${ScrollStyles.scrollable}`}>
+            <WeatherCurrentDisplay/>
+            <WeatherForcastDisplay/>
+        </div>
             
         </div>
     )

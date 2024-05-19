@@ -1,5 +1,5 @@
 'use client'
-import styles from '../../../styles/InputBar/InputBtn.module.css'
+import styles from '@/styles/components/InputBtn.module.css'
 type InputBtnProps = {
     buttonFn:any,
     buttonLabel:string

@@ -1,6 +1,6 @@
 'use client'
 import { CSSProperties, useEffect, useState } from 'react'
-import styles from '../../../styles/InputBar/InputBar.module.css'
+import styles from '@/styles/components/InputBar.module.css'
 import InputBtn from './InputBtn'
 type InputBarProps = {
     showRed?:boolean

@@ -1,6 +1,6 @@
 'use client'
 import { HourDataDype } from '@/contexts/WeatherDataTypes'
-import WeatherDisplayStyles from  '../../../../../../styles/pages/app/weatherDisplay.module.css'
+import WeatherDisplayStyles from  '@/styles/components/weatherDisplay.module.css'
 import { useMediaQuery } from 'usehooks-ts'
 
 type WeatherHourDisplayProps = {

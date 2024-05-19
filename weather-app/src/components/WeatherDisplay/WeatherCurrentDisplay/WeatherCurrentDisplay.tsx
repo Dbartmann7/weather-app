@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from 'react'
-import WeatherDisplayStyles from  '../../../../../styles/pages/app/weatherDisplay.module.css'
+import WeatherDisplayStyles from  '@/styles/components/weatherDisplay.module.css'
 import { WeatherDataContext, WeatherDataContextValueType } from '@/contexts/WeatherDataContext'
 type WeatherCurrentDisplayProps = {
 
