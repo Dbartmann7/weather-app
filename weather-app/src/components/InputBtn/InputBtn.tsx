@@ -11,7 +11,6 @@ const InputBtn = ({buttonFn, buttonLabel}:InputBtnProps) => {
         <button onClick={buttonFn} className={styles.inputBtn}>
             {buttonLabel}
         </button>
-       
     )
 }
 
