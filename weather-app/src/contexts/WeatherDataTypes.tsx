@@ -20,10 +20,10 @@ export type LocationDataType = {
 }
 
 export type ForecastDataType = {
-    hour:HourDataDype[]
+    hour:HourDataType[]
 }
 
-export type HourDataDype = {
+export type HourDataType = {
     time:string,
     temp_c:number,
     condition:{

@@ -13,7 +13,12 @@ type InputBarProps = {
 }
 
 
-const InputBar = ({placeholder, value, setValue, buttonFn, buttonLabel, showRed}:InputBarProps) => {
+const InputBar = ({placeholder, value, setValue, buttonFn, buttonLabel, showRed, errorMsg}:InputBarProps) => {
+    useEffect(() => {
+        if(errorMsg.length>0){
+            setValue(errorMsg)
+        }
+    }, [errorMsg])
     return (
         <div className={styles.inputContainer}>
             <input

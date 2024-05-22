@@ -16,7 +16,7 @@ const WeatherForcastDisplay = ({}:WeatherForcastDisplayProps) => {
     return (
         <div className={`${WeatherDisplayStyles.weatherForcastDisplay} ${Scrollable.scrollable}`}>
             {forecastData?.hour.map((hourData, i) => {
-                return <WeatherHourDisplay hourData={hourData} key={i}/>
+                return <WeatherHourDisplay hourData={hourData} key={i} data-testid={i}/>
             })}
            
         </div>
