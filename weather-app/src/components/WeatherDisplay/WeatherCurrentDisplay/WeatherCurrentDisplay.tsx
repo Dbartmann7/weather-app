@@ -1,17 +1,17 @@
 'use client'
 import { useContext } from 'react'
 import WeatherDisplayStyles from  '@/styles/components/weatherDisplay.module.css'
-import { WeatherDataContext, WeatherDataContextValueType } from '@/contexts/WeatherDataContext'
+import { WeatherDataContext, WeatherDataContextValueType } from '../../../contexts/WeatherDataContext'
 type WeatherCurrentDisplayProps = {
-
+    testid?:string
 }
 
 
-const WeatherCurrentDisplay = ({}:WeatherCurrentDisplayProps) => {
+const WeatherCurrentDisplay = ({testid}:WeatherCurrentDisplayProps) => {
     const {currentData, locationData} = useContext<WeatherDataContextValueType>(WeatherDataContext)
 
     return (
-        <div className={WeatherDisplayStyles.weatherCurrentDisplay}>
+        <div className={WeatherDisplayStyles.weatherCurrentDisplay} data-testid={testid}>
             {currentData &&
                 <>
              <div className={WeatherDisplayStyles.currentTitleContainer}>
@@ -23,7 +23,7 @@ const WeatherCurrentDisplay = ({}:WeatherCurrentDisplayProps) => {
                 <p>{`${currentData?.temp_c}°C, ${currentData?.condition.text}`}</p>
                 <img src={currentData?.condition.icon}/>
                 <p>{`feels like ${currentData?.feelslike_c}°C`}</p>
-                <p>{`wind speed: ${currentData?.wind_mph} mph `}</p>
+                <p>{`wind speed: ${currentData?.wind_mph} mph`}</p>
             </div>
             </>
             }

@@ -27,7 +27,6 @@ export const WeatherDataContextProvider = ({children}:WeatherDataContextPropsTyp
         hour:[]
     })
     const setWeatherData = (weatherData:WeatherDataType) => {
-        console.log(weatherData)
         setLocationData(weatherData.location)
         setCurrentData(weatherData.current)
         setForcastData(weatherData.forecast)

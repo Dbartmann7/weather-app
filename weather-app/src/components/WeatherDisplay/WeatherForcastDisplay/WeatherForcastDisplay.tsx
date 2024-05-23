@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import WeatherDisplayStyles from  '@/styles/components/weatherDisplay.module.css'
 import Scrollable from '@/styles/scrollable.module.css'
 import WeatherHourDisplay from '../WeatherHourDisplay/WeatherHourDisplay'
-import { WeatherDataContext, WeatherDataContextValueType } from '@/contexts/WeatherDataContext'
+import { WeatherDataContext, WeatherDataContextValueType } from '../../../contexts/WeatherDataContext'
 
 type WeatherForcastDisplayProps = {
 
